@@ -1,0 +1,23 @@
+# Java / Maven
+backend/target/
+*.class
+
+# Local configuration and secrets
+.env
+.env.*
+config.properties
+application-local.properties
+
+# IDE files
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Operating system
+.DS_Store
+Thumbs.db

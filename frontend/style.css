@@ -1,0 +1,473 @@
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f4;
+    color: #26332a;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. HEADER
+========================================= */
+
+header {
+    background-color: #14532d;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   3. NAVIGATION
+========================================= */
+
+nav {
+    background-color: #166534;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #bbf7d0;
+}
+
+/* =========================================
+   4. MAIN SECTIONS
+========================================= */
+
+section {
+    padding: 45px 8%;
+}
+
+section h2 {
+    color: #166534;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   5. WELCOME SECTION
+========================================= */
+
+.hero {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.hero p {
+    margin: 15px 0 25px;
+}
+
+/* =========================================
+   6. BUTTONS
+========================================= */
+
+button {
+    background-color: #15803d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #14532d;
+}
+
+/* =========================================
+   7. SERVICE CARDS
+========================================= */
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #16a34a;
+}
+
+.service-card h3 {
+    color: #166534;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   8. COMMON FORM DESIGN
+   ALL FORMS VERTICAL
+========================================= */
+
+#registrationForm,
+#reportForm,
+#requestForm,
+#trackingForm,
+#recordForm,
+#staffForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   9. FORM LABELS
+========================================= */
+
+#registrationForm label,
+#reportForm label,
+#requestForm label,
+#trackingForm label,
+#recordForm label,
+#staffForm label {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #166534;
+}
+
+/* =========================================
+   10. FORM INPUTS
+========================================= */
+
+#registrationForm input,
+#registrationForm textarea,
+#reportForm input,
+#reportForm select,
+#reportForm textarea,
+#requestForm input,
+#requestForm select,
+#trackingForm input,
+#trackingForm select,
+#recordForm input,
+#recordForm select,
+#recordForm textarea,
+#staffForm input,
+#staffForm select,
+#staffForm textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+
+    border: 1px solid #cbd5cb;
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: white;
+}
+
+/* =========================================
+   11. TEXTAREA
+========================================= */
+
+#registrationForm textarea,
+#reportForm textarea,
+#recordForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* =========================================
+   12. INPUT FOCUS EFFECT
+========================================= */
+
+#registrationForm input:focus,
+#registrationForm textarea:focus,
+#reportForm input:focus,
+#reportForm select:focus,
+#reportForm textarea:focus,
+#requestForm input:focus,
+#requestForm select:focus,
+#trackingForm input:focus,
+#trackingForm select:focus,
+#recordForm input:focus,
+#recordForm textarea:focus,
+#staffForm input:focus,
+#staffForm select:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 4px rgba(22, 163, 74, 0.3);
+}
+
+/* =========================================
+   13. FORM SUBMIT BUTTONS
+========================================= */
+
+#registrationForm button,
+#reportForm button,
+#requestForm button,
+#trackingForm button,
+#recordForm button,
+#staffForm button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* =========================================
+   14. FORM MESSAGE AREAS
+========================================= */
+
+#registrationMessage,
+#reportMessage,
+#requestMessage,
+#recordMessage,
+#staffMessage {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* =========================================
+   15. DASHBOARD NUMBERS
+========================================= */
+
+#dashboard .service-card p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #15803d;
+    margin-top: 10px;
+}
+
+/* =========================================
+   16. COLLECTION TRACKING
+========================================= */
+
+#trackingResults {
+    margin-top: 25px;
+}
+
+#trackingResults .service-card {
+    max-width: 600px;
+    margin: 15px auto;
+    background-color: white;
+}
+
+#trackingResults h3 {
+    color: #166534;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   17. RECORD COLLECTION FORM
+========================================= */
+
+#recordCollection {
+    padding: 40px 20px;
+}
+
+/* All record fields one below another */
+
+#recordForm {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.record-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.record-field label {
+    font-weight: bold;
+    color: #14532d;
+}
+
+.record-field input,
+.record-field textarea {
+    width: 100%;
+}
+
+.record-form .full-width {
+    width: 100%;
+}
+
+.record-submit {
+    width: 100%;
+}
+
+.record-submit button {
+    width: 100%;
+    padding: 14px;
+    background: #166534;
+    color: white;
+    font-weight: bold;
+}
+
+.record-submit button:hover {
+    background: #14532d;
+}
+
+/* =========================================
+   18. STAFF MANAGEMENT
+========================================= */
+
+#staffList {
+    margin-top: 20px;
+}
+
+#staffList .service-card {
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   19. ADMIN DASHBOARD
+========================================= */
+
+#adminDashboard {
+    overflow-x: auto;
+}
+
+#adminDashboard h3 {
+    color: #166534;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0 30px;
+    background-color: white;
+    min-width: 650px;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #166534;
+    color: white;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f0fdf4;
+}
+
+.admin-table tr:hover {
+    background-color: #dcfce7;
+}
+
+#adminMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#loadAdminData {
+    margin: 15px 0;
+}
+
+/* =========================================
+   20. ADMIN SEARCH INPUTS
+========================================= */
+
+#adminDashboard input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #cbd5cb;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* =========================================
+   21. FOOTER
+========================================= */
+
+footer {
+    background-color: #14532d;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+/* =========================================
+   22. MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    section {
+        padding: 30px 6%;
+    }
+
+    #registrationForm,
+    #reportForm,
+    #requestForm,
+    #trackingForm,
+    #recordForm,
+    #staffForm {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .admin-table {
+        min-width: 600px;
+    }
+}
