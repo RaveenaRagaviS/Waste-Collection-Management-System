@@ -26,6 +26,7 @@
     <a href="#contact">Contact</a>
     <a href="#staffManagement">Staff Management</a>
     <a href="#adminDashboard">Admin Dashboard</a>
+    <a href="#analysisDashboard">Data Analysis</a>
 </nav>
 
 <main>
@@ -354,9 +355,61 @@
         <input type="text" id="searchRecord"
                placeholder="Search by Record ID, Request ID or Staff ID">
         <div id="adminRecords"></div>
-    </section>
+    
+</section>
 
-    <!-- SERVICES -->
+<!-- PYTHON DATA ANALYSIS DASHBOARD -->
+<section id="analysisDashboard">
+    <h2>Environmental Data Analysis</h2>
+
+    <p>
+        Analyze waste collection data using Python,
+        Pandas and Matplotlib.
+    </p>
+
+    <button type="button" id="refreshAnalysisButton">
+        Refresh Analysis
+    </button>
+
+    <p id="analysisMessage"></p>
+
+    <div class="analysis-container">
+
+        <div class="analysis-card">
+            <h3>Waste Category Analysis</h3>
+            <img id="wasteCategoryChart"
+                 alt="Waste category analysis chart">
+        </div>
+
+        <div class="analysis-card">
+            <h3>Staff Performance</h3>
+            <img id="staffPerformanceChart"
+                 alt="Staff performance chart">
+        </div>
+
+        <div class="analysis-card">
+            <h3>Quantity by Category</h3>
+            <img id="quantityCategoryChart"
+                 alt="Waste quantity by category chart">
+        </div>
+
+        <div class="analysis-card">
+            <h3>Request Status Analysis</h3>
+            <img id="requestStatusChart"
+                 alt="Request status chart">
+        </div>
+
+        <div class="analysis-card">
+            <h3>Area-wise Collection</h3>
+            <img id="areaCollectionChart"
+                 alt="Area-wise collection chart">
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+
     <section id="services">
         <h2>Our Services</h2>
 
