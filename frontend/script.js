@@ -886,9 +886,12 @@ refreshAnalysisButton.addEventListener("click", async function () {
 
     try {
 
-        const response = await fetch("/api/analysis/refresh", {
-            method: "POST"
-        });
+        const response = await fetch(
+    "https://waste-collection-backend-071w.onrender.com/api/analysis/refresh",
+    {
+        method: "POST"
+    }
+);
 
         const result = await response.json();
 
@@ -899,19 +902,19 @@ refreshAnalysisButton.addEventListener("click", async function () {
         const timestamp = new Date().getTime();
 
         document.getElementById("wasteCategoryChart").src =
-            "/api/analysis/charts/waste_category_analysis.png?t=" + timestamp;
+            "https://waste-collection-backend-071w.onrender.com/api/analysis/charts/waste_category_analysis.png?t=" + timestamp;
 
         document.getElementById("staffPerformanceChart").src =
-            "/api/analysis/charts/staff_performance.png?t=" + timestamp;
+            "https://waste-collection-backend-071w.onrender.com/api/analysis/charts/staff_performance.png?t=" + timestamp;
 
         document.getElementById("quantityCategoryChart").src =
-            "/api/analysis/charts/quantity_by_category.png?t=" + timestamp;
+            "https://waste-collection-backend-071w.onrender.com/api/analysis/charts/quantity_by_category.png?t=" + timestamp;
 
         document.getElementById("requestStatusChart").src =
-            "/api/analysis/charts/request_status_analysis.png?t=" + timestamp;
+            "https://waste-collection-backend-071w.onrender.com/api/analysis/charts/request_status_analysis.png?t=" + timestamp;
 
         document.getElementById("areaCollectionChart").src =
-            "/api/analysis/charts/area_wise_collection.png?t=" + timestamp;
+            "https://waste-collection-backend-071w.onrender.com/api/analysis/charts/area_wise_collection.png?t=" + timestamp;
 
         message.textContent = "Analysis refreshed successfully!";
 
