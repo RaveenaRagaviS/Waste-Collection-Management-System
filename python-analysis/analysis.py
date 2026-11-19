@@ -1,6 +1,10 @@
 
 import sqlite3
 import pandas as pd
+import matplotlib
+
+matplotlib.use("Agg")
+
 import matplotlib.pyplot as plt
 from pathlib import Path
 
@@ -102,7 +106,6 @@ plt.xticks(rotation=30)
 plt.tight_layout()
 
 plt.savefig(OUTPUT_DIR / "waste_category_analysis.png")
-plt.show()
 plt.close()
 
 
@@ -158,7 +161,6 @@ plt.xticks(rotation=20)
 plt.tight_layout()
 
 plt.savefig(OUTPUT_DIR / "staff_performance.png")
-plt.show()
 plt.close()
 
 
@@ -198,7 +200,6 @@ plt.xticks(rotation=30)
 plt.tight_layout()
 
 plt.savefig(OUTPUT_DIR / "quantity_by_category.png")
-plt.show()
 plt.close()
 
 
@@ -233,7 +234,6 @@ plt.ylabel("Number of Requests")
 plt.tight_layout()
 
 plt.savefig(OUTPUT_DIR / "request_status_analysis.png")
-plt.show()
 plt.close()
 
 
@@ -271,7 +271,6 @@ plt.ylabel("Collected Quantity (kg)")
 plt.tight_layout()
 
 plt.savefig(OUTPUT_DIR / "area_wise_collection.png")
-plt.show()
 plt.close()
 
 

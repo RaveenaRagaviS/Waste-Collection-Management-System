@@ -868,3 +868,61 @@ document.addEventListener("DOMContentLoaded", async function() {
     await loadStaff();
     await loadAdminData();
 });
+
+// =====================================
+// PYTHON DATA ANALYSIS DASHBOARD
+// =====================================
+
+const refreshAnalysisButton =
+    document.getElementById("refreshAnalysisButton");
+
+refreshAnalysisButton.addEventListener("click", async function () {
+
+    const message = document.getElementById("analysisMessage");
+
+    message.textContent = "Refreshing analysis... Please wait.";
+
+    refreshAnalysisButton.disabled = true;
+
+    try {
+
+        const response = await fetch("/api/analysis/refresh", {
+            method: "POST"
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || "Analysis failed");
+        }
+
+        const timestamp = new Date().getTime();
+
+        document.getElementById("wasteCategoryChart").src =
+            "/api/analysis/charts/waste_category_analysis.png?t=" + timestamp;
+
+        document.getElementById("staffPerformanceChart").src =
+            "/api/analysis/charts/staff_performance.png?t=" + timestamp;
+
+        document.getElementById("quantityCategoryChart").src =
+            "/api/analysis/charts/quantity_by_category.png?t=" + timestamp;
+
+        document.getElementById("requestStatusChart").src =
+            "/api/analysis/charts/request_status_analysis.png?t=" + timestamp;
+
+        document.getElementById("areaCollectionChart").src =
+            "/api/analysis/charts/area_wise_collection.png?t=" + timestamp;
+
+        message.textContent = "Analysis refreshed successfully!";
+
+    } catch (error) {
+
+        message.textContent = "Error: " + error.message;
+
+    } finally {
+
+        refreshAnalysisButton.disabled = false;
+
+    }
+
+});
