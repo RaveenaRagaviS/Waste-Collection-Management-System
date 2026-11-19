@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Collection Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>♻ Waste Collection Management</h1>
+    <p>Building a cleaner and greener community</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#register">Register</a>
+    <a href="#report">Report Waste</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#collectionRequest">Request Collection</a>
+    <a href="#tracking">Track Requests</a>
+    <a href="#recordCollection">Record Collection</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#staffManagement">Staff Management</a>
+    <a href="#adminDashboard">Admin Dashboard</a>
+</nav>
+
+<main>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <h2>Manage Waste. Protect Our Environment.</h2>
+        <p>Report waste, request collection and track collection status.</p>
+        <button onclick="showMessage()">Get Started</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Our System</h2>
+        <p>
+            This system helps citizens report waste problems,
+            request waste collection and monitor collection activities.
+            It also helps administrators manage staff and collection records.
+        </p>
+    </section>
+
+    <!-- CITIZEN REGISTRATION -->
+    <section id="register">
+        <h2>Citizen Registration</h2>
+        <p>Create an account to use our waste collection services.</p>
+
+        <form id="registrationForm" class="registration-form">
+
+            <div class="registration-field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email address" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone"
+                       placeholder="Enter your phone number">
+            </div>
+
+            <div class="registration-field">
+                <label for="address">Address</label>
+                <textarea id="address"
+                          placeholder="Enter your complete address"
+                          required></textarea>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="registrationMessage"></p>
+    </section>
+
+    <!-- REPORT WASTE -->
+    <section id="report">
+        <h2>Report Waste</h2>
+        <p>Help keep your surroundings clean by reporting waste disposal problems.</p>
+
+        <form id="reportForm" class="report-form">
+
+            <div class="report-field">
+                <label for="reportUserId">Your User ID</label>
+                <input type="number" id="reportUserId"
+                       placeholder="Example: 4" min="1" required>
+            </div>
+
+            <div class="report-field">
+                <label for="wasteCategory">Waste Category</label>
+                <select id="wasteCategory" required>
+                    <option value="">Select a category</option>
+                    <option value="1">Plastic</option>
+                    <option value="2">Paper</option>
+                    <option value="3">Organic</option>
+                    <option value="4">Glass</option>
+                    <option value="5">Metal</option>
+                    <option value="6">Electronic</option>
+                </select>
+            </div>
+
+            <div class="report-field">
+                <label for="wasteLocation">Waste Location</label>
+                <input type="text" id="wasteLocation"
+                       placeholder="Enter the waste location" required>
+            </div>
+
+            <div class="report-field">
+                <label for="wasteDescription">Description</label>
+                <textarea id="wasteDescription"
+                          placeholder="Describe the waste problem"
+                          required></textarea>
+            </div>
+
+            <button type="submit">Submit Waste Report</button>
+        </form>
+
+        <p id="reportMessage"></p>
+    </section>
+
+    <!-- LIVE DASHBOARD -->
+    <section id="dashboard">
+        <h2>Live System Dashboard</h2>
+        <p>Statistics retrieved from our database.</p>
+
+        <div class="service-container">
+            <div class="service-card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Total Reports</h3>
+                <p id="totalReports">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Total Staff</h3>
+                <p id="totalStaff">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Total Requests</h3>
+                <p id="totalRequests">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Pending Requests</h3>
+                <p id="pendingRequests">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Completed Requests</h3>
+                <p id="completedRequests">Loading...</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Total Waste Collected</h3>
+                <p id="totalWaste">Loading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION REQUEST -->
+    <section id="collectionRequest">
+        <h2>Request Waste Collection</h2>
+        <p>Schedule a waste collection from your location.</p>
+
+        <form id="requestForm">
+            <div class="registration-field">
+                <label for="requestUserId">Your User ID</label>
+                <input type="number" id="requestUserId"
+                       placeholder="Example: 4" min="1" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="requestCategory">Waste Category</label>
+                <select id="requestCategory" required>
+                    <option value="">Select a category</option>
+                    <option value="1">Plastic</option>
+                    <option value="2">Paper</option>
+                    <option value="3">Organic</option>
+                    <option value="4">Glass</option>
+                    <option value="5">Metal</option>
+                    <option value="6">Electronic</option>
+                </select>
+            </div>
+
+            <div class="registration-field">
+                <label for="requestStaffId">Staff ID</label>
+                <input type="number" id="requestStaffId"
+                       placeholder="Example: 2" min="1" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="pickupLocation">Pickup Location</label>
+                <input type="text" id="pickupLocation"
+                       placeholder="Enter pickup location" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="scheduledDate">Scheduled Date</label>
+                <input type="date" id="scheduledDate" required>
+            </div>
+
+            <button type="submit">Submit Collection Request</button>
+        </form>
+
+        <p id="requestMessage"></p>
+    </section>
+
+    <!-- TRACKING -->
+    <section id="tracking">
+        <h2>Track Collection Requests</h2>
+        <p>Enter your User ID to view your collection requests.</p>
+
+        <form id="trackingForm">
+            <div class="registration-field">
+                <label for="trackingUserId">Your User ID</label>
+                <input type="number" id="trackingUserId"
+                       min="1" placeholder="Example: 4" required>
+            </div>
+
+            <button type="submit">Track Requests</button>
+        </form>
+
+        <div id="trackingResults"></div>
+    </section>
+
+    <!-- RECORD COLLECTION -->
+    <section id="recordCollection">
+        <h2>Record Waste Collection</h2>
+        <p>Collection staff can record the quantity of waste collected.</p>
+
+        <form id="recordForm" class="record-form">
+
+            <div class="record-field">
+                <label for="recordRequestId">Request ID</label>
+                <input type="number" id="recordRequestId"
+                       min="1" placeholder="Enter Request ID" required>
+            </div>
+
+            <div class="record-field">
+                <label for="recordStaffId">Staff ID</label>
+                <input type="number" id="recordStaffId"
+                       min="1" placeholder="Enter Staff ID" required>
+            </div>
+
+            <div class="record-field">
+                <label for="collectedQuantity">Collected Quantity (kg)</label>
+                <input type="number" id="collectedQuantity"
+                       min="0.01" step="0.01"
+                       placeholder="Enter quantity" required>
+            </div>
+
+            <div class="record-field">
+                <label for="recordRemarks">Remarks</label>
+                <textarea id="recordRemarks"
+                          placeholder="Enter collection remarks"></textarea>
+            </div>
+
+            <div class="record-submit full-width">
+                <button type="submit">Submit Collection Record</button>
+            </div>
+        </form>
+
+        <p id="recordMessage"></p>
+    </section>
+
+    <!-- STAFF MANAGEMENT -->
+    <section id="staffManagement">
+        <h2>Staff Management</h2>
+        <p>Register and manage waste collection staff members.</p>
+
+        <form id="staffForm">
+            <div class="registration-field">
+                <label for="staffName">Staff Name</label>
+                <input type="text" id="staffName"
+                       placeholder="Enter staff name" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="staffPhone">Phone Number</label>
+                <input type="tel" id="staffPhone"
+                       placeholder="Enter phone number" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="assignedArea">Assigned Area</label>
+                <input type="text" id="assignedArea"
+                       placeholder="Enter assigned area" required>
+            </div>
+
+            <div class="registration-field">
+                <label for="staffAvailability">Availability</label>
+                <select id="staffAvailability" required>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+            </div>
+
+            <button type="submit">Register Staff</button>
+        </form>
+
+        <p id="staffMessage"></p>
+
+        <h3>Registered Staff Members</h3>
+        <button type="button" id="loadStaffButton">View All Staff</button>
+
+        <div id="staffList"></div>
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="adminDashboard">
+        <h2>Administrator Dashboard</h2>
+        <p>Monitor and manage all waste collection activities.</p>
+
+        <button type="button" id="loadAdminData">Refresh Admin Data</button>
+        <div id="adminMessage"></div>
+
+        <h3>Registered Citizens</h3>
+        <input type="text" id="searchCitizen"
+               placeholder="Search by name or email">
+        <div id="adminUsers"></div>
+
+        <h3>Waste Reports</h3>
+        <input type="text" id="searchReport"
+               placeholder="Search by Report ID or Location">
+        <div id="adminReports"></div>
+
+        <h3>Collection Requests</h3>
+        <input type="text" id="searchRequest"
+               placeholder="Search by Request ID, location or status">
+        <div id="adminRequests"></div>
+
+        <h3>Collection Staff</h3>
+        <input type="text" id="searchStaff"
+               placeholder="Search by staff name, phone or area">
+        <div id="adminStaff"></div>
+
+        <h3>Collection Records</h3>
+        <input type="text" id="searchRecord"
+               placeholder="Search by Record ID, Request ID or Staff ID">
+        <div id="adminRecords"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+            <div class="service-card">
+                <h3>Report Waste</h3>
+                <p>Report waste disposal problems in your area.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Request Collection</h3>
+                <p>Submit a request to collect waste from your location.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Track Collection</h3>
+                <p>Check the status of your waste collection request.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Record Collection</h3>
+                <p>Record the quantity of waste collected by staff.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Dashboard</h3>
+                <p>View waste collection statistics and activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Waste Collection Management System</p>
+        <p>Working towards a cleaner environment.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Waste Collection Management System</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
